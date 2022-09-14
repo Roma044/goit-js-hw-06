@@ -7,14 +7,16 @@ const ingredients = [
   "Condiments",
 ];
 
-const ingredientsList = document.getElementById("ingredients");
-// console.log(ingredientsList);
-const foodIngredients = ingredients.forEach((ingredient) => {
-  const item = document.createElement("li");
-  console.log(item);
-  item.classList.add("item");
-  item.innerHTML = ingredient;
-  return ingredientsList.append(item);
+const ingredientsList = document.querySelector("#ingredients");
+
+const foodIngredients = ingredients.map((item) => {
+  const foodIngredients = document.createElement("li");
+
+  foodIngredients.classList.add("item");
+
+  foodIngredients.textContent = item;
+
+  return foodIngredients;
 });
 
-console.log(foodIngredients);
+ingredientsList.append(...foodIngredients);
